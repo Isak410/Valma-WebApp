@@ -1,15 +1,16 @@
-# Conversation Web App Template
+# Valma Web App Next.js Template
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Config App
 Create a file named `.env.local` in the current directory and copy the contents from `.env.example`. Setting the following content:
 ```
-# APP ID
+# APP ID (ID of the app created in the studio of the Valma app, can be found in the URL when viewing the app. Example: https://app.valma.ai/app/b42b8d94-d239-41cb-89d3-c9473153d6a4/develop)
+# The ID is then b42b8d94-d239-41cb-89d3-c9473153d6a4
 NEXT_PUBLIC_APP_ID=
-# APP API key
+# APP API key (API key created in the "API-access" panel in the studio of the Valma app)
 NEXT_PUBLIC_APP_KEY=
-# APP URL
-NEXT_PUBLIC_API_URL=
+# API url prefix (URL for API calls to Valma AI)
+NEXT_PUBLIC_API_URL=https://api.app.valma.ai/v1
 ```
 
 Config more in `config/index.ts` file:   
