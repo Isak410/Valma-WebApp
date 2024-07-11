@@ -22,6 +22,7 @@ import AppUnavailable from '@/app/components/app-unavailable'
 import { API_KEY, APP_ID, APP_INFO, isShowPrompt, promptTemplate } from '@/config'
 import type { Annotation as AnnotationType } from '@/types/log'
 import { addFileInfos, sortAgentSorts } from '@/utils/tools'
+import { signOut } from 'next-auth/react'
 
 const Main: FC = () => {
   const { t } = useTranslation()
@@ -611,12 +612,16 @@ const Main: FC = () => {
 
   return (
     <div className='bg-gray-100'>
-      <Header
+      <div className='flex flex-row justify-between'>
+        <p className='text-transparent'>s</p>
+        <Header
         title={APP_INFO.title}
         isMobile={isMobile}
         onShowSideBar={showSidebar}
         onCreateNewChat={() => handleConversationIdChange('-1')}
       />
+      <button onClick={() => {signOut()}} className='mr-5'>Sign out</button>
+      </div>
       <div className="flex rounded-t-2xl bg-white overflow-hidden">
         {/* sidebar */}
         {!isMobile && renderSidebar()}
