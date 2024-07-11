@@ -6,12 +6,14 @@ import s from '../style.module.css'
 
 import { Markdown } from '@/app/components/base/markdown'
 import ImageGallery from '@/app/components/base/image-gallery'
+import { useSession } from 'next-auth/react'
 
 type IQuestionProps = Pick<IChatItem, 'id' | 'content' | 'useCurrentUserAvatar'> & {
   imgSrcs?: string[]
 }
 
 const Question: FC<IQuestionProps> = ({ id, content, useCurrentUserAvatar, imgSrcs }) => {
+  const { data: session, status } = useSession();
   const userName = ''
   return (
     <div className='flex items-start justify-end' key={id}>
@@ -34,7 +36,7 @@ const Question: FC<IQuestionProps> = ({ id, content, useCurrentUserAvatar, imgSr
           </div>
         )
         : (
-          <div className={`${s.questionIcon} w-10 h-10 shrink-0 `}></div>
+          <div className={`${s.questionIcon} w-10 h-10 shrink-0 bg-('${session?.user?.image}') `}></div>
         )}
     </div>
   )

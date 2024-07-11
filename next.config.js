@@ -16,6 +16,9 @@ const nextConfig = {
     // https://nextjs.org/docs/api-reference/next.config.js/ignoring-typescript-errors
     ignoreBuildErrors: true,
   },
+  images: {
+    domains: ['lh3.googleusercontent.com']
+  },
 }
 
 module.exports = nextConfig

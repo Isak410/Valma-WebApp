@@ -15,6 +15,12 @@ const LocaleLayout = async({
   return (
     <html lang={locale ?? 'nb-NO'} className="h-full">
       <body className="h-full">
+      <header>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.css"
+        />
+      </header>
         <div className="overflow-x-auto">
           <div className="w-screen h-screen min-w-[300px]">
             <SessionProvider session={session}>

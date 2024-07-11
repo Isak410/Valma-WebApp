@@ -19,7 +19,6 @@
 
 
 .questionIcon {
-  background: url(./icons/default-avatar.jpg);
   background-size: contain;
   border-radius: 50%;
 }
