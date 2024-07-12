@@ -39,9 +39,11 @@ const options: NextAuthOptions = {
       return token;
     },
     async session({ session, token }) {
+      console.log(token)
       if (token && session.user) {
         session.user.id = token.id!;
         session.user.role = token.role ?? undefined;
+        session.user.image = token.image as string;
         session.user.groups = token.groups || [];
       }
       return session;

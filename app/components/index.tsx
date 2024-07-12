@@ -612,16 +612,12 @@ const Main: FC = () => {
 
   return (
     <div className='bg-gray-600'>
-      <div className='flex flex-row justify-between'>
-        <p className='text-transparent'>asdadas</p>
         <Header
         title={APP_INFO.title}
         isMobile={isMobile}
         onShowSideBar={showSidebar}
         onCreateNewChat={() => handleConversationIdChange('-1')}
       />
-      <button onClick={() => {signOut()}} className='mr-5 text-red-500'>Sign out <i className="fa-solid fa-arrow-right-from-bracket color-white pt-1  text-red-500"></i></button>
-      </div>
       <div className="flex rounded-t-2xl bg-white overflow-hidden">
         {/* sidebar */}
         {!isMobile && renderSidebar()}

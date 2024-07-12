@@ -14,13 +14,16 @@ type IQuestionProps = Pick<IChatItem, 'id' | 'content' | 'useCurrentUserAvatar'>
 
 const Question: FC<IQuestionProps> = ({ id, content, useCurrentUserAvatar, imgSrcs }) => {
   const { data: session, status } = useSession();
-  const userName = ''
+
+  console.log(session?.user)
+  
+  const userName = session?.user?.name || ''
   return (
     <div className='flex items-start justify-end' key={id}>
       <div>
         <div className={`${s.question} relative text-sm text-gray-900`}>
           <div
-            className={'mr-2 py-3 px-4 bg-blue-500 rounded-tl-2xl rounded-b-2xl'}
+            className={'mr-2 py-3 px-4 bg-irisgreen rounded-tl-2xl rounded-b-2xl'}
           >
             {imgSrcs && imgSrcs.length > 0 && (
               <ImageGallery srcs={imgSrcs} />
@@ -36,7 +39,7 @@ const Question: FC<IQuestionProps> = ({ id, content, useCurrentUserAvatar, imgSr
           </div>
         )
         : (
-          <div className={`${s.questionIcon} w-10 h-10 shrink-0 bg-('${session?.user?.image}') `}></div>
+          <img src={session?.user?.image as string} alt='404' width={47} height={40} className='rounded-full'></img>
         )}
     </div>
   )
