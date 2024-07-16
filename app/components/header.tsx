@@ -38,14 +38,14 @@ const Header: FC<IHeaderProps> = ({
             >
               <PencilSquareIcon className="h-4 w-4 text-gray-500" />
             </div>)
-          : <div></div>}
+          : <h1 className='text-3xl font-bold' >Iris AI</h1>}
         </div>
       <div className='flex items-center space-x-2'>
         <AppIcon size="small" />
         <div className=" text-sm text-gray-800 font-bold">{title}</div>
       </div>
       
-      <button onClick={() => {signOut()}} className='mr-5 text-red-500'>Sign out <i className="fa-solid fa-arrow-right-from-bracket color-white pt-1  text-red-500"></i></button>
+      <button onClick={() => {signOut()}} className=' text-red-500 text-xl pb-1'>Sign out <i className="fa-solid fa-arrow-right-from-bracket color-white pt-1  text-red-500"></i></button>
     </div>
   )
 }

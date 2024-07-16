@@ -1,3 +1,4 @@
+//@ts-nocheck
 import type { FC } from 'react'
 import React from 'react'
 

@@ -14,6 +14,7 @@ type IQuestionProps = Pick<IChatItem, 'id' | 'content' | 'useCurrentUserAvatar'>
 
 const Question: FC<IQuestionProps> = ({ id, content, useCurrentUserAvatar, imgSrcs }) => {
   const { data: session, status } = useSession();
+  console.log(session)
 
   console.log(session?.user)
   
